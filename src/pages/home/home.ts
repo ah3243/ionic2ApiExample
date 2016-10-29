@@ -11,15 +11,14 @@ import { PeopleSearch } from '../../providers/people-search';
 })
 export class HomePage {
   public people: any;
-
   constructor(public navCtrl: NavController, public peopleSearch: PeopleSearch) {
     this.loadPeople();
   }
 
   loadPeople() {
     this.peopleSearch.load()
-      .then(data => { 
-        this.people = data;
+      .then(data1 => { 
+        this.people = data1;
       });
   }
 }

@@ -10,22 +10,22 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class PeopleSearch {
-  data: any;
+  data1: any;
   constructor(public http: Http) {
     console.log('Hello PeopleSearch Provider');
   }
 
   load() {
-    if (this.data) {
-      return Promise.resolve(this.data);
+    if (this.data1) {
+      return Promise.resolve(this.data1);
     }
     // Dont have the data yet
     return new Promise(resolve => {
       this.http.get('https://randomuser.me/api/?results=10')
         .map(res => res.json())
         .subscribe(data => {
-          this.data = data.results;
-          resolve(this.data);
+          this.data1 = data.results;
+          resolve(this.data1);
         });
     });
   }  
